@@ -72,7 +72,7 @@
     _searchController.obscuresBackgroundDuringPresentation = NO;
     _searchController.hidesNavigationBarDuringPresentation = NO;
     _searchController.searchBar.placeholder = @"Search Tweaks";
-    _searchController.searchBar.scopeButtonTitles = @[@"Categories", @"Tweaks"];
+    _searchController.searchBar.scopeButtonTitles = @[@"Tweaks", @"Categories"];
     _searchController.searchBar.delegate = self;
     self.definesPresentationContext = YES;
     if (@available(iOS 11.0, *)) {
@@ -287,7 +287,7 @@
 }
 
 - (void)filter {
-    if (_searchController.searchBar.selectedScopeButtonIndex == FBTweakSearchScopeTweak) {
+    if (_searchController.searchBar.selectedScopeButtonIndex == FBTweakSearchScopeCategory) {
         _filteredCollections = [_FBTweakSearchUtil filteredCollectionsInCategories:_sortedCategories forQuery:_searchController.searchBar.text];
     }
     [_tableView reloadData];
@@ -298,7 +298,7 @@
 }
 
 - (BOOL)isFilteringTweaks {
-    return self.isFiltering && _searchController.searchBar.selectedScopeButtonIndex == FBTweakSearchScopeTweak;
+    return self.isFiltering && _searchController.searchBar.selectedScopeButtonIndex == FBTweakSearchScopeCategory;
 }
 
 @end
