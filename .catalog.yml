@@ -1,0 +1,16 @@
+
+version: '1'
+type: third-party
+component:
+    name: tweaks
+    owner:                                      
+    - Hive
+    description: Tweaks menu for the iOS application
+    serviceClass: economy-class
+    personalDataHandling: none               
+    soxScope: False                           
+    paymentProcessing: False
+    selfHosted: True
+    license: bsd
+    supportOverride:                          
+      slackChannel: "#apps-enablement"
